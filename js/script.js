@@ -25,7 +25,7 @@ let kmUserInput = document.getElementById("km");
 
 submit.addEventListener("click", function() {
     let nameUser = nameUserInput.value;
-    let ageUser = parseInt(ageUserInput.value);
+    let ageUser = ageUserInput.value;
     let kmUser = parseInt(kmUserInput.value);
     console.log(nameUser, ageUser, kmUser);
 
@@ -34,9 +34,9 @@ submit.addEventListener("click", function() {
 
     let price;
 
-    if (ageUser < 18) {
+    if (ageUser === "minorenne") {
         price = (firstPrice*0.8).toFixed(2);
-    } else if (ageUser > 65) {
+    } else if (ageUser === "over65") {
         price = (firstPrice*0.6).toFixed(2);
     } else {
         price = (firstPrice).toFixed(2);
