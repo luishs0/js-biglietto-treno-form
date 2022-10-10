@@ -22,6 +22,8 @@ let submitInput = document.getElementById("submit");
 
 let kmUserInput = document.getElementById("km");
 
+let ticketUser = document.getElementById("ticket")
+
 
 submit.addEventListener("click", function() {
     let nameUser = nameUserInput.value;
@@ -33,18 +35,57 @@ submit.addEventListener("click", function() {
     console.log(firstPrice);
 
     let price;
+    let offer;
 
     if (ageUser === "minorenne") {
         price = (firstPrice*0.8).toFixed(2);
+        offer = "20%";
     } else if (ageUser === "over65") {
         price = (firstPrice*0.6).toFixed(2);
+        offer = "40%";
     } else {
         price = (firstPrice).toFixed(2);
+        offer = "0%";
     }
 
     console.log("prezzo col sconto: " + price + " €");
 
-    document.getElementById("p_answer").innerHTML = `Ciao ${nameUser}! Il prezzo del tuo biglietto é: ${price} €`
+
+    nameUserContent = document.getElementById("nameuser");
+    nameUserContent.innerHTML = `${nameUser}`
+
+    let offerLabel = document.getElementById("offerta");
+    offerLabel.innerHTML = offer;
+
+    let carrozza = document.getElementById("carrozza");
+    carrozza.innerHTML = Math.floor(Math.random() * (10 - 1 + 1) ) + 1;
+
+    let cp = document.getElementById("cp");
+    cp.innerHTML = Math.floor(Math.random() * (10000 - 1 + 1) ) + 1;
+
+    let costo = document.getElementById("costo");
+    costo.innerHTML = price + " €";
+
+    nameUserInput.value = "";
+    ageUserInput.value = "";
+    kmUserInput.value = "";
+
+
+    ticketUser.classList.remove("ms_not");
+    ticketUser.classList.add("ms_yes");
+
+
+})
+
+let anulla = document.getElementById("anulla");
+
+anulla.addEventListener("click", function() {
+    nameUserInput.value = "";
+    ageUserInput.value = "";
+    kmUserInput.value = "";
+
+    ticketUser.classList.add("ms_not");
+    ticketUser.classList.remove("ms_yes");
 })
 
 

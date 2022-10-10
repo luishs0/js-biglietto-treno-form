@@ -1,0 +1,59 @@
+body {
+    background-color: #b9144f;
+}
+
+h1, h2 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1.8rem;
+    text-align: center;
+    color: white;
+}
+
+.details-title {
+    font-size: 1.3rem;
+    padding-left: 0;
+    margin-left: -12px;
+    margin-bottom: 0;
+}
+
+h4 {
+    font-size: 1rem;
+}
+
+.form, .ticket {
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 1rem;
+    background-color: white;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.ticket {
+    border-radius: 0;
+}
+
+.ms_name, .ms_age, .ms_km {
+    width: calc(100% / 3 - 10px);
+}
+
+.ticket-container {
+    width: 95%;
+    margin: auto;
+}
+
+.ticket-1 {
+    background-color: #808080;
+}
+
+.ticket-2 {
+    border-top: 1px solid #808080;
+    border-bottom: 1px solid #808080;
+}
+
+.ms_not {
+    display: none;
+}
+
+.ms_yes {
+    display: block;
+}
